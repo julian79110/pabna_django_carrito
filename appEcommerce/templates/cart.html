@@ -273,7 +273,7 @@
                                     <th class="product-name">Product</th>
                                     <th class="product-price">Price</th>
                                     <th class="product-quantity">Quantity</th>
-                                    <th class="product-subtotal">Total</th>
+                                 
                                     <th class="product-remove">Remove</th>
                                 </tr>
                             </thead>
@@ -294,9 +294,7 @@
                                         <td class="product-quantity">
                                             <input type="number" name="cantidad-{{ item.id }}" value="{{ item.cantidad }}"  min="1"/>
                                         </td>
-                                       <td class="product-subtotal" id="subtotal-{{ item.id }}">
-										{{ item.producto.precio}}
-										</td>
+                                       
                                         <td class="product-remove">
                                             <a href="{% url 'quitar_del_carrito' item.producto.id %}">Remove</a>
                                         </td>
@@ -367,7 +365,6 @@
                                 </table><br>
                                 <div class="wc-proceed-to-checkout"><br>
                                     <a href="{% url 'check' %}">Adquirir Articulos</a>
-									
                                 </div>
                             </div>
                         </div>
@@ -388,7 +385,7 @@
 						<div class="col-md-12">
 							<div class="footer-logo">
 								<img src="img/logo-white-text.png" alt="" />
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore <br /> magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.</p>
+								<p>🫣 Encuentra tu estilo, siéntete imparable y conquista el mundo con cada atuendo. ¡Tu ropa, tu historia, tu poder! ✌️</p>
 							</div>
 						</div>
 					</div>
