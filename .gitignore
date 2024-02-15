@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+env/
+*.png
+*.jpg
+images/
+*.bak
+*.dat
+*.dir
