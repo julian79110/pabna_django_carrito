@@ -118,42 +118,25 @@
 							<div class="col-md-2 col-sm-8 col-xs-7 header-right">
 								<div class="my-cart">
 									<div class="total-cart">
-										<a href={% url 'ver_carrito' %}>
+										<a href="{% url 'ver_carrito' %}">
 											<i class="fa fa-shopping-cart"></i>
-											<span>2</span>
+											<span>{{carro}}</span>
 										</a>
 									</div>
 									<ul>
-										<li>
-											<div class="cart-img">
-												<a href="#"><img alt="" src={% static 'img/cart/1.jpg' %}></a>
-											</div>
-											<div class="cart-info">
-												<h4><a href="#">Vestibulum suscipit</a></h4>
-												<span>£165.00 <span>x 1</span></span>
-											</div>
-											<div class="del-icon">
-												<i class="fa fa-times-circle"></i>
-											</div>
-										</li>
-										<li>
-											<div class="cart-img">
-												<a href="#"><img alt="" src="img/cart/1.jpg"></a>
-											</div>
-											<div class="cart-info">
-												<h4><a href="#">Vestibulum suscipit</a></h4>
-												<span>£165.00 <span>x 1</span></span>
-											</div>
-											<div class="del-icon">
-												<i class="fa fa-times-circle"></i>
-											</div>
-										</li>
-										<li class="cart-border">
-											<div class="subtotal-text">Subtotal: </div>
-											<div class="subtotal-price">£300.00</div>
-										</li>
-										<li>
-											<a class="cart-button" href={% url 'ver_carrito' %}>Ver Carro</a>
+										{% for item in items %}
+											<li class="cart-border">
+												<div class="cart-img">
+													<a href="#"><img alt="" src="{{ item.producto.imagen.url }}"></a>
+												</div>
+												<div class="cart-info">
+													<h4><a href="#">{{ item.producto.nombre }}</a></h4>
+													<span>$ {{ item.producto.precio }} <span>x {{ item.cantidad }}</span></span>
+												</div>
+											</li>
+										{% endfor %}
+										<li class="cart-button">
+											<a href="{% url 'ver_carrito' %}">Ver Carro</a>
 										</li>
 									</ul>
 								</div>

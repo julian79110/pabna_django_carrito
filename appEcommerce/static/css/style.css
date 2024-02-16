@@ -44,6 +44,7 @@
 /*  1.  Theme default CSS
 /*----------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
 html, body {height: 100%;}
 .floatleft {float:left}
 .floatright {float:right}
@@ -189,7 +190,7 @@ position: relative;}
   padding: 35px 0;
   text-transform: uppercase;
 }
-.main-menu ul li:hover a{color:#080808}
+.main-menu ul li:hover a{color:#FE4847}
 .main-menu ul li ul {
   background: #fff none repeat scroll 0 0;
   box-shadow: 0 1px 2px rgba(86, 86, 90, 0.5);
@@ -2171,83 +2172,7 @@ font-size: 18px;}
 .cart-main-area {
   padding: 60px 0;
 }
-.table-content table {
-  background: rgb(29,29,29);
-  color: white !important;
-  border-color: #161616;
-  border-radius: 0;
-  border-style: solid;
-  border-width: 1px 0 0 1px;
-  margin: 0 0 60px;
-  text-align: center;
-  width: 100%;
-}
-.table-content table th {
-  border-top: medium none;
-  font-weight: normal;
-  padding: 20px 10px;
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: middle;
-  white-space: nowrap;
-}
-.table-content table th, .table-content table td {
-  border-bottom: 1px solid #3d3d3d;
-  border-right: 1px solid #585858;
-  color: #444;
-  font-weight: 600;
-}
-.table-content table td {
-  border-top: medium none;
-  font-size: 13px;
-  padding: 20px 10px;
-  vertical-align: middle;
-}
-.table-content table td input {
-  background: #e5e5e5 none repeat scroll 0 0;
-  border: medium none;
-  border-radius: 3px;
-  color: #6f6f6f;
-  font-size: 15px;
-  font-weight: normal;
-  height: 40px;
-  padding: 0 5px 0 10px;
-  text-align: center;
-  width: 60px;
-}
-.table-content table td.product-subtotal {
-  font-size: 14px;
-  font-weight: bold;
-  width: 120px;
-}
-.table-content table td.product-name a ,.product-name > a{
-  color: #444;
-  font-size: 14px;
-  font-weight: 700;
-  margin-left: 10px;
-}
-.table-content table td.product-name{width: 270px;}
-.table-content table td.product-thumbnail{width: 130px;}
-.table-content table td.product-remove i {
-  color: #444;
-  display: inline-block;
-  font-size: 20px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  width: 40px;
-}
-.table-content table .product-price .amount {
-  font-size: 15px;
-  font-weight: 700;
-}
-.table-content table td.product-remove i:hover{color:#FE4847}
-.table-content table td.product-quantity{width: 180px;}
-.table-content table td.product-remove{width: 150px;}
-.table-content table td.product-price{width: 130px;}
-.table-content table td.product-name a:hover, .buttons-cart a:hover,.product-name > a:hover {
-  color: #fe4847;
-}
+
 .buttons-cart {
   margin-bottom: 30px;
   overflow: hidden;
@@ -3188,4 +3113,32 @@ width: 100%;}
 .modal-product .widget .social-icons li .social-icon.linkedin:hover {
     background: #0097BD;
     border: 1px solid #0097BD;
+}
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+    height: 70px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 12px;
+
+}
+
+.Titulo{
+    color: #000 !important;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.descripcion{
+  color: #000;
+  font-size: 18px;
+  flex-wrap: wrap;
 }

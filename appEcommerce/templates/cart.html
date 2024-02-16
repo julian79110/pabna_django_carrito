@@ -266,42 +266,15 @@
                 <form action="#" method="post">
                     {% csrf_token %}
                     <div class="table-content table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="product-thumbnail">Image</th>
-                                    <th class="product-name">Product</th>
-                                    <th class="product-price">Price</th>
-                                    <th class="product-quantity">Quantity</th>
-                                 
-                                    <th class="product-remove">Remove</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for item in items %}
-								<tr class="cart-item" data-product-id="{{ item.producto.id }}" data-unit-price="{{ item.producto.precio }}" id="cart-item-{{ item.id }}">
-                                        <td class="product-thumbnail">
-                                            <a href="#">
-                                                <img src="{{ item.producto.imagen.url }}" alt="{{ item.producto.nombre }}" />
-                                            </a>
-                                        </td>
-                                        <td class="product-name">
-                                            <a href="#">{{ item.producto.nombre }}</a>
-                                        </td>
-                                        <td class="product-price">
-                                            <span class="amount">${{ item.producto.precio }}</span>
-                                        </td>
-                                        <td class="product-quantity">
-                                            <input type="number" name="cantidad-{{ item.id }}" value="{{ item.cantidad }}"  min="1"/>
-                                        </td>
-                                       
-                                        <td class="product-remove">
-                                            <a href="{% url 'quitar_del_carrito' item.producto.id %}">Remove</a>
-                                        </td>
-                                    </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
+						{% for item in items %}
+									<div class="container2">
+										<a href="#"><img alt="" src="{{ item.producto.imagen.url }}" width="70px" ></a>
+										<p class="Titulo">{{item.producto.nombre}}</p>
+										<p class="descripcion">{{item.producto.descripcion}}</p>
+									</div>
+						{% endfor %}
+                                
+						<br><br>
                     </div>
 					<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 					<script>

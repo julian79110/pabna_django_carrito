@@ -8,7 +8,12 @@ from django.shortcuts import get_object_or_404, redirect
 from .models import Producto, Carrito, ItemCarrito
 
 def index(request):
-    return render(request, 'index.html')
+    traer_productos = Producto.objects.all()
+    carrito, creado = Carrito.objects.get_or_create(usuario=request.user)
+    items = carrito.items.all()
+    cantidad_objetos = items.count()
+    total = calcular_nuevo_total(carrito)
+    return render(request, 'index.html', {"productos":traer_productos, "items":items, "total":total, "carro":cantidad_objetos})
 
 def details(request, producto_id):
     producto = get_object_or_404(Producto, id=producto_id)
