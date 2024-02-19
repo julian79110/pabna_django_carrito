@@ -56,81 +56,30 @@
 								<div class="main-menu">
 									<nav>
 										<ul>
-											<li class="static"><a href="shop.html">Catalogo</a>
-												<div class="mega-menu">
-													<div class="mega-left">
-														<span>
-															<a href="shop.html" class="mega-title">WOMEN CLOTH </a>
-															<a href="shop.html">casual shirt</a>
-															<a href="shop.html">rikke t-shirt</a>
-															<a href="shop.html">mia top </a>
-															<a href="shop.html">muscle tee </a>
-														</span>
-														<span>
-															<a href="shop.html" class="mega-title">MEN CLOTH </a>
-															<a href="shop.html">casual shirt</a>
-															<a href="shop.html">rikke t-shirt</a>
-															<a href="shop.html">mia top </a>
-															<a href="shop.html">muscle tee </a>
-														</span>
-														<span>
-															<a href="shop.html" class="mega-title">WOMEN JEWELRY </a>
-															<a href="shop.html">necklace </a>
-															<a href="shop.html">chunky short striped </a>
-															<a href="shop.html">samhar cuff</a>
-															<a href="shop.html">nail set </a>
-														</span>
-														<span>
-															<a href="shop.html" class="mega-title">WOMEN JEWELRY </a>
-															<a href="shop.html">necklace </a>
-															<a href="shop.html">chunky short striped </a>
-															<a href="shop.html">samhar cuff</a>
-															<a href="shop.html">nail set </a>
-														</span>
-														<span>
-															<a href="shop.html" class="mega-title">WOMEN JEWELRY </a>
-															<a href="shop.html">necklace </a>
-															<a href="shop.html">chunky short striped </a>
-															<a href="shop.html">samhar cuff</a>
-															<a href="shop.html">nail set </a>
-														</span>
-													</div>
-													<div class="mega-right">
-														<span class="mega-menu-img">
-															<a href="shop.html"><img alt="" src="img/1.jpg"></a>
-														</span>
-													</div>
-												</div>										
+											<li class="static"><a href={% url 'shop' %}>Catalogo</a>
 											</li>
 											<li><a href={% url 'shop' %}>Categorias</a>
-												<div class="mega-menu mega-menu-2">											
+												<div class="mega-menu mega-menu-2">
 													<span>
-														<a href="shop.html" class="mega-title">WOMEN CLOTH </a>
-														<a href="shop.html">casual shirt</a>
-														<a href="shop.html">rikke t-shirt</a>
-														<a href="shop.html">mia top </a>
-														<a href="shop.html">muscle tee </a>
+														<a href="shop.html" class="mega-title">Ropa Para Mujer </a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
 													</span>
 													<span>
-														<a href="shop.html" class="mega-title">MEN CLOTH </a>
-														<a href="shop.html">casual shirt</a>
-														<a href="shop.html">rikke t-shirt</a>
-														<a href="shop.html">mia top </a>
-														<a href="shop.html">muscle tee </a>
-													</span>
-													<span>
-														<a href="shop.html" class="mega-title">WOMEN JEWELRY </a>
-														<a href="shop.html">necklace </a>
-														<a href="shop.html">chunky short striped </a>
-														<a href="shop.html">samhar cuff</a>
-														<a href="shop.html">nail set </a>
+														<a href="shop.html" class="mega-title">Ropa Para Hombre </a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
 													</span>
 													<span class="mega-menu-img">
 														<a href="shop.html"><img alt="" src="img/1.jpg"></a>
 													</span>
-												</div>											
-											</li>								
-											<li><a href={% url 'contact' %}>Contactanos</a></li>
+												</div>
+											</li>
+											<li><a href={% url 'contact' %}>contactanos</a></li>
 										</ul>
 									</nav>
 								</div>
@@ -147,17 +96,19 @@
 										{% for item in items %}
 											<li class="cart-border">
 												<div class="cart-img">
-													<a href="#"><img alt="" src="{{ item.producto.imagen.url }}"></a>
+													<a href="{% url 'details' item.producto.id %}"><img alt="" src="{{ item.producto.imagen.url }}"></a>
 												</div>
 												<div class="cart-info">
-													<h4><a href="#">{{ item.producto.nombre }}</a></h4>
-													<span>$ {{ item.producto.precio }} <span>x {{ item.cantidad }}</span></span>
+													<h4><a href="{% url 'details' item.producto.id %}">{{ item.producto.nombre }}</a></h4>
+													<h6><a class="decorar">Precio: $ {{item.producto.precio}} x {{item.cantidad}}</a></h6>
 												</div>
 											</li>
 										{% endfor %}
-										<li class="cart-button">
-											<a href="{% url 'ver_carrito' %}">Ver Carro</a>
-										</li>
+										<a href="{% url 'ver_carrito' %}">
+											<li class="cart-button">
+												Ver Carro
+											</li>
+										</a>
 									</ul>
 								</div>
 								<div class="user-meta">
@@ -167,8 +118,8 @@
 										<li><a href="#">Wish list</a></li>
 										<li><a href="#">Checkout</a></li>
 										<li><a href="#">Log in</a></li>
-									</ul>								
-								</div>					
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -228,11 +179,11 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="breadcrumb-list">
-							<h1>Categorias</h1>
+							<h1>CATALOGO</h1>
 							<ul>
 								<li><a href={% url 'index' %}>Inicio</a> <span class="divider">|</span></li>
 								<li><a href={% url 'shop' %}>Categorias</a> <span class="divider">|</span></li>
-								<li><a href="cart.html">Terminar Compra</a></li>
+								<li><a href="{% url 'ver_carrito' %}">Terminar Compra</a></li>
 							</ul>							
 						</div>
 					</div>
@@ -298,58 +249,7 @@
 							</ul>						
 						</aside>
 						<!-- widget end -->
-						<!-- widget start -->
-						<aside class="widget widget-categories">
-							<h3 class="sidebar-title">Recent Product</h3>
-							<div class="recent-product">
-								<div class="single-product">
-									<div class="product-img">
-										<a href="product-details.html">
-											<img src={% static 'img/product/12.jpg' %} alt="" />
-											<img class="secondary-img" src="img/product/18.jpg" alt="" />
-										</a>
-									</div>
-									<div class="product-content">
-										<h3><a href="product-details.html">Lorem ipsum dolor</a></h3>
-										<div class="price">
-											<span>$80.00</span>
-											<span class="old">$90.11</span>
-										</div>
-									</div>
-								</div>	
-								<div class="single-product">
-									<div class="product-img">
-										<a href="product-details.html">
-											<img src={% static 'img/product/22.jpg' %} alt="" />
-											<img class="secondary-img" src="img/product/18.jpg" alt="" />
-										</a>
-									</div>
-									<div class="product-content">
-										<h3><a href="product-details.html">Lorem ipsum dolor</a></h3>
-										<div class="price">
-											<span>$80.00</span>
-											<span class="old">$90.11</span>
-										</div>
-									</div>
-								</div>	
-								<div class="single-product">
-									<div class="product-img">
-										<a href="product-details.html">
-											<img src={% static 'img/product/14.jpg' %} alt="" />
-											<img class="secondary-img" src="img/product/18.jpg" alt="" />
-										</a>
-									</div>
-									<div class="product-content">
-										<h3><a href="product-details.html">Lorem ipsum dolor</a></h3>
-										<div class="price">
-											<span>$80.00</span>
-											<span class="old">$90.11</span>
-										</div>
-									</div>
-								</div>							
-							</div>
-						</aside>
-						<!-- widget end -->						
+										
 						
 										
 					</div>
@@ -374,6 +274,7 @@
 									<div class="row">
 										<!-- single-product start -->
 										{% for p in productos %}
+											{% if p.stock == 'si' %}
 										<div class="col-md-4 col-sm-4">
 											<div class="single-product">
 												<div class="product-img">
@@ -390,9 +291,9 @@
 															<a href="#" ><i class="fa fa-heart"></i></a>
 														</div>
 														<div class="button-cart">
-															<a href="{% url 'agregar_al_carrito' p.id %}">
-														<button class="button-cart">
-															<i class="fa fa-shopping-cart"></i> Añadir De Carrito 
+															<a href="{% url 'agregar_al_carrito' p.id %}" id="addedToCart" onclick="addToCart(event);">
+														<button class="button-cart" >
+															<i class="fa fa-shopping-cart"></i> Añadir Al Carrito 
 														</button>
 															</a>
 													</div>
@@ -407,10 +308,87 @@
 												</div>
 											</div>
 										</div>
+											{% endif %}
 										{% endfor %}
 										<!-- single-product end -->								
 									</div>
 								</div>
+
+								<div class="cart-container" id="cartContainer">
+									<div class="cart-icon"><img class="cart-image" src="{% static 'img/carrito-de-supermercado.png' %}" width="80px" height="80px"></div>
+									<div class="check-icon"><img class="imagen check-icon" src="{% static 'img/prueba.png' %}" width="80px" height="80px"></div>
+									<br><br>
+								</div>
+								
+								<script>
+									const cartContainer = document.getElementById('cartContainer');
+									
+									function addToCart(event) {
+										// Previene el comportamiento predeterminado del enlace
+										event.preventDefault();
+								
+										// Inicia la animación estableciendo la opacidad inicial
+										cartContainer.style.opacity = '0';
+								
+										// Agrega la clase 'added' después de un pequeño retraso
+										setTimeout(() => {
+											cartContainer.classList.add('added');
+											
+											// Establece la opacidad final después de agregar la clase 'added'
+											cartContainer.style.opacity = '1';
+								
+											// Elimina la clase 'added' después de la animación
+											setTimeout(() => {
+												cartContainer.classList.remove('added');
+											}, 2000);
+										}, 100);
+									}
+								</script>
+								
+								<style>
+									.cart-container.added .cart-icon {
+										opacity: 0;
+									}
+								
+									.cart-container.added .check-icon {
+										opacity: 1;
+										transform: scale(1);
+									}
+								
+									.cart-container {
+										display: flex;
+										justify-content: flex-end;
+										align-items: flex-start;
+										position: fixed;
+										top: 10px;
+										right: 10px;
+										z-index: 100;
+										transition: opacity 0.5s;
+										opacity: 1;
+									}
+								
+									.cart-icon,
+									.check-icon {
+										position: relative;
+										font-size: 40px;
+										color: #3498db;
+										background-color: white;
+										border-radius: 50px;
+										padding: 10px;
+										display: flex;
+										justify-content: center;
+										align-items: center;
+										transition: .8s ease-in-out;
+									}
+									.check-icon {
+										opacity: 0;
+										transform: scale(0.1);
+									}
+									.imagen {
+										border-radius: 50%;
+									}
+								</style>
+								
 								<!--view as-->
 								
 		
@@ -430,11 +408,8 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="footer-logo">
-								<img src={% static 'img/logo-white-text.png' %} alt="" />
-								<p><video width="640" height="360" controls >
-									<source src={% static 'videos/footer.mp4' %} type="video/mp4" autoplay>
-								  </video></p>
-								
+								<img src={% static 'img/logo-white-text.png' %} alt="" /><br>
+								🫣 Encuentra tu estilo, siéntete imparable y conquista el mundo con cada atuendo. ¡Tu ropa, tu historia, tu poder! ✌️
 							</div>
 						</div>
 					</div>

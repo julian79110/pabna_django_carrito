@@ -15,9 +15,25 @@ def index(request):
     total = calcular_nuevo_total(carrito)
     return render(request, 'index.html', {"productos":traer_productos, "items":items, "total":total, "carro":cantidad_objetos})
 
+def deseos(request):
+    deseo, = Carrito.objects.get_or_create(usuario=request.user)
+    items = deseo.items.all()
+    return render(request, 'deseos.html', {"items":items})
+
+def login(request):
+    carrito, creado = Carrito.objects.get_or_create(usuario=request.user)
+    items = carrito.items.all()
+    cantidad_objetos = items.count()
+    total = sum(item.producto.precio * item.cantidad for item in items)
+    return render(request, 'login.html', {"items":items, "total":total, "carro":cantidad_objetos})
+
 def details(request, producto_id):
     producto = get_object_or_404(Producto, id=producto_id)
-    return render(request, 'product-details.html', {'producto': producto})
+    carrito, creado = Carrito.objects.get_or_create(usuario=request.user)
+    items = carrito.items.all()
+    cantidad_objetos = items.count()
+    total = sum(item.producto.precio * item.cantidad for item in items)
+    return render(request, 'product-details.html', {'producto': producto, "items":items, "total":total, "carro":cantidad_objetos})
 
 def shop(request):
     traer_productos = Producto.objects.all()
@@ -28,7 +44,11 @@ def shop(request):
     return render(request, 'shop.html', {"productos":traer_productos, "items":items, "total":total, "carro":cantidad_objetos})
 
 def contact(request):
-    return render(request, 'contact.html')
+    carrito, creado = Carrito.objects.get_or_create(usuario=request.user)
+    items = carrito.items.all()
+    cantidad_objetos = items.count()
+    total = sum(item.producto.precio * item.cantidad for item in items)
+    return render(request, 'contact.html', {"items":items, "total":total, "carro":cantidad_objetos})
 
 def checkout(request):
     carrito, creado = Carrito.objects.get_or_create(usuario=request.user)
@@ -61,8 +81,6 @@ def create_producto(request):
         form = ProductoForm()
     return render(request, 'registrar_producto.html', {'form': form, 'mensaje':mensaje})
 
-
-
 def agregar_al_carrito(request, id):
     producto = get_object_or_404(Producto, id=id)
     carrito, creado = Carrito.objects.get_or_create(usuario=request.user)
@@ -77,7 +95,7 @@ def agregar_al_carrito(request, id):
     else:
         carrito.items.add(item_carrito)
 
-    return redirect('ver_carrito')
+    return redirect('shop')
 
 def quitar_del_carrito(request, producto_id):
     producto = get_object_or_404(Producto, pk=producto_id)
@@ -129,15 +147,8 @@ def actualizar_carrito(request):
 
     return JsonResponse({'error': 'Invalid request'})
 
-
-
 def calcular_nuevo_total(carrito):
     # Aquí debes calcular el nuevo total basado en los ítems del carrito
     items = carrito.items.all()
     total = sum(item.producto.precio * item.cantidad for item in items)
     return total
-
-
-
-
-

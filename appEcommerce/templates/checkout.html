@@ -57,81 +57,30 @@
 								<div class="main-menu">
 									<nav>
 										<ul>
-											<li class="static"><a href="{% url 'shop' %}">Ropa</a>
-												<div class="mega-menu">
-													<div class="mega-left">
-														<span>
-															<a href="shop.html" class="mega-title">WOMEN CLOTH </a>
-															<a href="shop.html">casual shirt</a>
-															<a href="shop.html">rikke t-shirt</a>
-															<a href="shop.html">mia top </a>
-															<a href="shop.html">muscle tee </a>
-														</span>
-														<span>
-															<a href="shop.html" class="mega-title">MEN CLOTH </a>
-															<a href="shop.html">casual shirt</a>
-															<a href="shop.html">rikke t-shirt</a>
-															<a href="shop.html">mia top </a>
-															<a href="shop.html">muscle tee </a>
-														</span>
-														<span>
-															<a href="shop.html" class="mega-title">WOMEN JEWELRY </a>
-															<a href="shop.html">necklace </a>
-															<a href="shop.html">chunky short striped </a>
-															<a href="shop.html">samhar cuff</a>
-															<a href="shop.html">nail set </a>
-														</span>
-														<span>
-															<a href="shop.html" class="mega-title">WOMEN JEWELRY </a>
-															<a href="shop.html">necklace </a>
-															<a href="shop.html">chunky short striped </a>
-															<a href="shop.html">samhar cuff</a>
-															<a href="shop.html">nail set </a>
-														</span>
-														<span>
-															<a href="shop.html" class="mega-title">WOMEN JEWELRY </a>
-															<a href="shop.html">necklace </a>
-															<a href="shop.html">chunky short striped </a>
-															<a href="shop.html">samhar cuff</a>
-															<a href="shop.html">nail set </a>
-														</span>
-													</div>
-													<div class="mega-right">
-														<span class="mega-menu-img">
-															<a href="shop.html"><img alt="" src="img/1.jpg"></a>
-														</span>
-													</div>
-												</div>										
+											<li class="static"><a href={% url 'shop' %}>Catalogo</a>
 											</li>
-											<li><a href="shop.html">Categorias</a>
-												<div class="mega-menu mega-menu-2">											
+											<li><a href={% url 'shop' %}>Categorias</a>
+												<div class="mega-menu mega-menu-2">
 													<span>
-														<a href="shop.html" class="mega-title">WOMEN CLOTH </a>
-														<a href="shop.html">casual shirt</a>
-														<a href="shop.html">rikke t-shirt</a>
-														<a href="shop.html">mia top </a>
-														<a href="shop.html">muscle tee </a>
+														<a href="shop.html" class="mega-title">Ropa Para Mujer </a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
 													</span>
 													<span>
-														<a href="shop.html" class="mega-title">MEN CLOTH </a>
-														<a href="shop.html">casual shirt</a>
-														<a href="shop.html">rikke t-shirt</a>
-														<a href="shop.html">mia top </a>
-														<a href="shop.html">muscle tee </a>
-													</span>
-													<span>
-														<a href="shop.html" class="mega-title">WOMEN JEWELRY </a>
-														<a href="shop.html">necklace </a>
-														<a href="shop.html">chunky short striped </a>
-														<a href="shop.html">samhar cuff</a>
-														<a href="shop.html">nail set </a>
+														<a href="shop.html" class="mega-title">Ropa Para Hombre </a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
+														<a href="shop.html">...</a>
 													</span>
 													<span class="mega-menu-img">
 														<a href="shop.html"><img alt="" src="img/1.jpg"></a>
 													</span>
-												</div>											
-											</li>										
-											<li><a href="contact.html">Contactenos</a></li>
+												</div>
+											</li>
+											<li><a href={% url 'contact' %}>contactanos</a></li>
 										</ul>
 									</nav>
 								</div>
@@ -148,17 +97,19 @@
 										{% for item in items %}
 											<li class="cart-border">
 												<div class="cart-img">
-													<a href="#"><img alt="" src="{{ item.producto.imagen.url }}"></a>
+													<a href="{% url 'details' item.producto.id %}"><img alt="" src="{{ item.producto.imagen.url }}"></a>
 												</div>
 												<div class="cart-info">
-													<h4><a href="#">{{ item.producto.nombre }}</a></h4>
-													<span>$ {{ item.producto.precio }} <span>x {{ item.cantidad }}</span></span>
+													<h4><a href="{% url 'details' item.producto.id %}">{{ item.producto.nombre }}</a></h4>
+													<h6><a class="decorar">Precio: $ {{item.producto.precio}} x {{item.cantidad}}</a></h6>
 												</div>
 											</li>
 										{% endfor %}
-										<li class="cart-button">
-											<a href="{% url 'ver_carrito' %}">Ver Carro</a>
-										</li>
+										<a href="{% url 'ver_carrito' %}">
+											<li class="cart-button">
+												Ver Carro
+											</li>
+										</a>
 									</ul>
 								</div>
 								<div class="user-meta">
@@ -167,10 +118,9 @@
 										<li><a href="#">My Account</a></li>
 										<li><a href="#">Wish list</a></li>
 										<li><a href="#">Checkout</a></li>
-										<li><a href="#">Testimonial</a></li>
 										<li><a href="#">Log in</a></li>
-									</ul>								
-								</div>						
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -489,9 +439,7 @@
 						<div class="col-md-12">
 							<div class="footer-logo">
 								<img src={% static 'img/logo-white-text.png' %} alt="" />
-								<p><video width="640" height="360" controls >
-									<source src={% static 'videos/footer.mp4' %} type="video/mp4" autoplay>
-								  </video></p>
+								<p></p>
 								
 							</div>
 						</div>

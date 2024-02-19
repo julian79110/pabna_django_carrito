@@ -4,13 +4,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Contact || Pabna</title>
+        <title>Login || Pabna</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" type="image/x-icon" href={% static 'img/favicon.ico' %}">
+        <link rel="shortcut icon" type="image/x-icon" href={% static 'img/favicon.ico' %}>
         <!-- Place favicon.ico in the root directory -->
-
 
 		<!-- all css here -->
 		<!-- bootstrap v3.3.6 css -->
@@ -135,7 +134,16 @@
 							<div class="mobile-menu">
 								<nav id="dropdown">
 									<ul>
-										<li><a href="shop.html">Ropa</a>
+										<li><a href="/">Inicio</a>
+											<ul>
+												<li><a href="index.html">Homepage Version 1</a></li>
+												<li><a href="index-2.html">Homepage Version 2</a></li>
+												<li><a href="index-3.html">Homepage Version 3</a></li>
+											</ul>
+										</li>
+										<li><a href="about.html">About</a></li>
+										<li><a href="blog.html">blog</a></li>
+										<li><a href="shop.html">Shop</a>
 											<ul>
 												<li><a href="#">WOMEN CLOTH</a>
 													<ul>
@@ -163,7 +171,29 @@
 												</li>											
 											</ul>
 										</li>
-										<li><a href="contact.html">Contactanos</a></li>
+										<li><a href="shop.html">Footwear </a></li>
+										<li><a href="#">Pages</a>
+											<ul>
+												<li><a href="about.html">about</a></li>
+												<li><a href="blog.html">blog</a></li>
+												<li><a href="blog-2-column.html">blog 2 column</a></li>
+												<li><a href="blog-full-width.html">blog full width</a></li>
+												<li><a href="blog-right-sidebar.html">blog right sidebar</a></li>
+												<li><a href="single-blog.html">single blog</a></li>
+												<li><a href="single-blog-video.html">single blog video</a></li>
+												<li><a href="cart.html">shopping cart</a></li>
+												<li><a href="checkout.html">checkout</a></li>
+												<li><a href="wishlist.html">wishlist</a></li>
+												<li><a href="contact.html">contact</a></li>
+												<li><a href="login.html">login</a></li>
+												<li><a href="shop.html">shop</a></li>
+												<li><a href="product-details.html">product details</a></li>
+												<li><a href="shop-full-width.html">shop full width</a></li>
+												<li><a href="shop-right-sidebar.html">shop right sidebar</a></li>
+												<li><a href="404.html">404 error</a></li>
+											</ul>
+										</li>
+										<li><a href="contact.html">Contact</a></li>
 									</ul>
 								</nav>
 							</div>					
@@ -180,10 +210,10 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="breadcrumb-list">
-							<h1>Contactanos</h1>
+							<h1>Iniciar Sesion</h1>
 							<ul>
-								<li><a href={% url 'index' %}>Inicio</a> <span class="divider">|</span></li>
-								<li>Contactanos</li>
+								<li><a href="/">Inicio</a> <span class="divider">|</span></li>
+								<li>Iniciar Sesion</li>
 							</ul>							
 						</div>
 					</div>
@@ -191,55 +221,46 @@
 			</div>
 		</div>
 		<!-- breadcrumb-area end -->
-		<!-- contact-area start -->
-		<div class="contact-area pad-60">
+		<!-- login-area start -->
+		<div class="login-area">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4">
-						
-					</div>
-					<div class="col-md-4">
-						<div class="contact-info">
-							<div class="single-contact">
-								<div class="contact-icon">
-									<i class="fa fa-phone"></i>
+					<div class="col-md-6">
+						<div class="login-content">
+							<h2 class="login-title">Iniciar Sesion</h2>
+							<form action="#" autocomplete="off">
+								<label>Correo Electronico</label>
+								<input type="text" />
+								<label>Contraseña</label>
+								<input type="password" />
+								<div class="login-lost">
+									<span class="forgot-login">
+										<a href="#">Olvidaste La Contraseña?</a>
+									</span>
 								</div>
-								<div class="contact-method">
-									<h2>+000-111-2222</h2>
-									<span>Telefono</span>
-								</div>
-							</div>
-							<div class="single-contact">
-								<div class="contact-icon">
-									<i class="fa fa-envelope"></i>
-								</div>
-								<div class="contact-method">
-									<h2>admin@basictheme.net</h2>
-									<span>Correo</span>
-								</div>
-							</div>
-							<div class="single-contact">
-								<div class="contact-icon">
-									<i class="fa fa-commenting"></i>
-								</div>
-								<div class="contact-method">
-									<h2>Inicia Un Chat</h2>
-									<span>Un Chat En Vivo Con Nosotros <br><br><a href="#" style="text-align: start;"><h4>Aqui</h4></a></span>
-								</div>
-							</div>
+								<input class="login-sub" type="submit" value="Inicar Sesion" />
+							</form>
 						</div>
-					</div>					
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="map-area">
-							<div id="googleMap"></div>
+					</div>
+					<div class="col-md-6">
+						<div class="login-content login-margin">
+							<h2 class="login-title">¿No tienes Una Cuenta?</h2>
+							<p class="mensaje2">Crea Una Aqui.</p>
+							<form action="#">
+								<label>Correo Electronico</label>
+								<input type="text" />
+								<input class="login-sub" type="submit" value="Registrarse" />
+							</form>
+							<div class="sign-up-today">
+								<h2 class="login-title">Accederas a muchos beneficios!</h2>
+							</div>							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- contact-area end -->	
+		<!-- login-area end -->	
+		
 		<!-- footer start -->
 		<footer>
 			<div class="footer-top">
@@ -248,7 +269,7 @@
 						<div class="col-md-12">
 							<div class="footer-logo">
 								<img src={% static 'img/logo-white-text.png' %} alt="" />
-								<p></p>
+								<p>🫣 Encuentra tu estilo, siéntete imparable y conquista el mundo con cada atuendo. ¡Tu ropa, tu historia, tu poder! ✌️</p>
 								
 							</div>
 						</div>
@@ -303,7 +324,6 @@
 			<!-- footer-bottom-area end -->
 		</footer>
 		<!-- footer end -->
-
 		
 
 
@@ -326,7 +346,7 @@
   </div>
 </div>	
 
-				<!-- all js here -->
+		<!-- all js here -->
 		<!-- jquery latest version -->
         <script src={% static 'js/vendor/jquery-1.12.0.min.js' %}></script>
 		<!-- bootstrap js -->
@@ -340,33 +360,7 @@
 		<!-- wow js -->
         <script src={% static 'js/wow.min.js' %}></script>
 		<!-- plugins js -->
-    
-		<!-- Google Map js -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuU_0_uLMnFM-2oWod_fzC0atPZj7dHlU"></script>
-		<script>
-			function initialize() {
-			  var mapOptions = {
-				zoom: 15,
-				scrollwheel: false,
-				center: new google.maps.LatLng(51.5073509, -0.12775829999998223)
-			  };
-
-			  var map = new google.maps.Map(document.getElementById('googleMap'),
-				  mapOptions);
-
-
-			  var marker = new google.maps.Marker({
-				position: map.getCenter(),
-				animation:google.maps.Animation.BOUNCE,
-				icon: 'img/map.png',
-				map: map
-			  });
-
-			}
-
-			google.maps.event.addDomListener(window, 'load', initialize);
-		</script>			
-	    <script src={% static 'js/plugins.js' %}></script>
+        <script src={% static 'js/plugins.js' %}></script>
 		<!-- main js -->
         <script src={% static 'js/main.js' %}></script>
     </body>

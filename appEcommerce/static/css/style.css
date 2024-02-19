@@ -1276,6 +1276,7 @@ ul.footer-contact li i {
   margin-left: 28px;
   text-align: center;
   width: 130px;
+  color: #000;
 }
 .price_slider_amount > input[type="submit"] {
   background: #252525 none repeat scroll 0 0;
@@ -1303,7 +1304,7 @@ ul.footer-contact li i {
 }
 ul.sidebar-menu{}
 ul.sidebar-menu li {
-  border-bottom: 1px dashed #999;
+  border-bottom: 1px dashed #ffffff;
   line-height: 40px;
   position: relative;
 }
@@ -1316,7 +1317,7 @@ ul.sidebar-menu li::before {
   width: 6px;
 }
 ul.sidebar-menu li a {
-  color: #575757;
+  color: #ffffff;
   font-size: 13px;
   font-weight: normal;
   padding-left: 15px;
@@ -1328,7 +1329,7 @@ span.count {
 ul.sidebar-menu li a:before{}
 ul.sidebar-menu li a:hover{color:#FE4847}
 h3.sidebar-title {
-  color: #444;
+  color: #ffffff;
   font-size: 17px;
   font-weight: 700;
   margin: 0;
@@ -1337,7 +1338,7 @@ h3.sidebar-title {
   text-transform: uppercase;
 }
 h3.sidebar-title::before {
-  background: #999 none repeat scroll 0 0;
+  background: #ffffff none repeat scroll 0 0;
   bottom: 5px;
   content: "";
   height: 2px;
@@ -1359,7 +1360,7 @@ h3.sidebar-title::before {
   text-transform: capitalize;
 }
 .widget.product-tag a {
-  color: #575757;
+  color: #ffffff;
 }
 .single-sale {
   position: relative;
@@ -2017,7 +2018,7 @@ border-radius: 0;
 color: #fff;
 height: 36px;
 margin-left: 6px;
-padding: 5px 10px;transition: all 0.3s ease 0s;}
+padding: 5px 10px;transition: all 0.1s ease 0s;}
 .coupon-checkout-content {
   display:none;
 }
@@ -2027,7 +2028,7 @@ padding: 5px 10px;transition: all 0.3s ease 0s;}
 .checkbox-form{}
 .checkbox-form h3 {
   border-bottom: 1px solid #e5e5e5;
-  color: #222;
+  color: #ffffff;
   font-size: 26px;
   margin: 0 0 20px;
   padding-bottom: 10px;
@@ -2037,7 +2038,7 @@ padding: 5px 10px;transition: all 0.3s ease 0s;}
 .country-select{margin-bottom: 30px;
 position: relative;}
 .country-select label, .checkout-form-list label {
-  color: #222;
+  color: #ffffff;
   display: block;
   margin: 0 0 5px;
 }
@@ -2057,7 +2058,7 @@ width: 100%;}
   top: 27px;
 }
 .checkout-form-list{margin-bottom: 30px;}
-.checkout-form-list label{color: #333;}
+.checkout-form-list label{color: #ffffff;}
 .checkout-form-list label span.required{}
 .checkout-form-list input[type="text"], .checkout-form-list input[type="password"], .checkout-form-list input[type="email"] {
   background: #fff none repeat scroll 0 0;
@@ -2066,6 +2067,7 @@ width: 100%;}
   height: 42px;
   padding: 0 0 0 10px;
   width: 100%;
+  color: #ffffff;
 }
 .checkout-form-list input[type="checkbox"] {
   display: inline-block;
@@ -2074,18 +2076,18 @@ width: 100%;}
   top: 2px;
 }
 .create-acc label {
-  color: #333;
+  color: #ffffff;
   display: inline-block;
 }
 .checkout-form-list input[type=password]{}
 .create-account{display:none}
 .ship-different-title{}
 .ship-different-title h3 label{display: inline-block;
-margin-right: 20px;}
+margin-right: 20px; color: white;}
 .ship-different-title input{}
 .order-notes{}
 .order-notes textarea {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #000000;
   height: 90px;
   padding: 15px;
   width: 100%;
@@ -2369,13 +2371,18 @@ a.shipping-calculator-button:hover {
 /*-----------------------------------
 17. login-area
 -------------------------------------*/
+.mensaje2{
+  color: white;
+}
 .login-area {
-  background: #efefef none repeat scroll 0 0;
+  background: rgb(29, 29, 29);
   padding: 60px 0;
+  color: white;
 }
 .login-content {
-  background: #fff none repeat scroll 0 0;
+  background: rgb(29, 29, 29);
   padding: 25px;
+  color: white;
 }
 .login-content p{}
 .social-sign{}
@@ -2394,7 +2401,7 @@ a.shipping-calculator-button:hover {
   background:#22A9E0;
 }
 .login-title {
-  color: #2a2a2a;
+  color: #ffffff;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -2406,7 +2413,7 @@ a.shipping-calculator-button:hover {
   margin-top: 30px;
 }
 .login-content form label {
-  color: #444;
+  color: #ffffff;
   margin-bottom: 5px;
 }
 .login-content form input {
@@ -2446,7 +2453,7 @@ a.shipping-calculator-button:hover {
   float: right;
 }
 .login-lost span.forgot-login a {
-  color: #444;
+  color: #ffffff;
 }
 .login-lost span.forgot-login a:hover{color:#FE4847}
 .sign-up-today {
@@ -2472,7 +2479,7 @@ a.shipping-calculator-button:hover {
 18. contact-area
 -------------------------------------*/
 .contact-area {
-  background: #efefef none repeat scroll 0 0;
+  background: rgb(29, 29, 29);
 }
 .contact-form {
 	background: #fff none repeat scroll 0 0;
@@ -3118,7 +3125,7 @@ width: 100%;}
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 35%;
+    width: 50%;
     height: 70px;
     background-color: whitesmoke;
     border-radius: 5px;
@@ -3139,6 +3146,11 @@ width: 100%;}
 }
 .descripcion{
   color: #000;
-  font-size: 18px;
+  font-size: 15px;
   flex-wrap: wrap;
+}
+.decorar {
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
 }
